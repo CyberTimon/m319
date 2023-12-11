@@ -86,6 +86,27 @@ ChangeValue(a);
 Console.WriteLine(a);  // Gibt 100 aus, nicht 200
 ```
 
+## Rückgabewerte
+
+```cs
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int result = Add(5, 7);
+        Console.WriteLine("Das Ergebnis der Addition ist: " + result);
+    }
+
+    static int Add(int num1, int num2)
+    {
+        int sum = num1 + num2;
+        return sum;
+    }
+}
+
+```
 
 # Operatoren
 
