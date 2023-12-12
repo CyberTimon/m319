@@ -130,3 +130,57 @@ a -= 5; // Der Variable a wird 5 subtrahiert und sie wird gespeichert
 a *= 5; // Die Variable a wird mit 5 multipliziert und wird gespeichert
 a /= 5; // Die Variable a wird mit 5 dividiert und wird gespeichert
 ```
+
+# Beispielskripte
+
+Schaltjahrprogramm
+
+```cs
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int startYear = InputYear("start year");
+        int endYear = InputYear("end year");
+        PrintAllLeapYears(startYear, endYear);
+        Console.ReadLine();
+    }
+
+    static int InputYear(string yearType)
+    {
+        int year;
+        while (true)
+        {
+            Console.Write($"Enter {yearType}: ");
+            if (int.TryParse(Console.ReadLine(), out year) && year >= 0 && year <= 5000)
+            {
+                return year;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid year between 0 and 5000.");
+            }
+        }
+    }
+
+    static void PrintAllLeapYears(int startYear, int endYear)
+    {
+        Console.WriteLine($"Leap years between {startYear} and {endYear}:");
+        for (int year = startYear; year <= endYear; year++)
+        {
+            if (IsLeapYear(year))
+            {
+                Console.WriteLine(year);
+            }
+        }
+    }
+
+    static bool IsLeapYear(int year)
+    {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+}
+```
