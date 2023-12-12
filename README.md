@@ -258,6 +258,36 @@ public static int Fibonacci(int n)
 
 ```
 
+Rekursiv mit Abfrage von Start und Endpunkt:
+```cs
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Geben Sie den Startpunkt ein: ");
+        int start = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Geben Sie den Endpunkt ein: ");
+        int end = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = start; i <= end; i++)
+        {
+            Console.WriteLine(Fibonacci(i));
+        }
+    }
+
+    static int Fibonacci(int n)
+    {
+        if (n <= 1)
+            return n;
+        else
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+}
+```
+
 Internet:
 ```cs
 using System;
