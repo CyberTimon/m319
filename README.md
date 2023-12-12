@@ -192,6 +192,12 @@ GPT-4:
 1. Rekursive Methode: Die rekursive Methode ist die direkteste Methode zur Berechnung der Fibonacci-Zahlen, aber sie ist nicht effizient für große Zahlen.
 
 ```cs
+public static void Main()
+{
+    int n = 10; // Sie können den Wert von n ändern
+    Console.WriteLine(Fibonacci(n));
+}
+
 public static int Fibonacci(int n)
 {
     if (n <= 1)
@@ -204,6 +210,12 @@ public static int Fibonacci(int n)
 2. Iterative Methode: Die iterative Methode ist effizienter als die rekursive Methode, da sie weniger Speicherplatz benötigt und schneller ist.
 
 ```cs
+public static void Main()
+{
+    int n = 10; // Sie können den Wert von n ändern
+    Console.WriteLine(Fibonacci(n));
+}
+
 public static int Fibonacci(int n)
 {
     int a = 0;
@@ -218,11 +230,18 @@ public static int Fibonacci(int n)
 
     return a;
 }
+
 ```
 
 3. Methode mit Memoisierung: Memoisierung ist eine Technik, bei der Sie die Ergebnisse teurer Funktionsaufrufe speichern und bei wiederholten Aufrufen wiederverwenden. Dies kann die Leistung erheblich verbessern.
 
 ```cs
+public static void Main()
+{
+    int n = 10; // Sie können den Wert von n ändern
+    Console.WriteLine(Fibonacci(n));
+}
+
 public static int Fibonacci(int n)
 {
     int[] fib = new int[n + 2];
@@ -236,6 +255,7 @@ public static int Fibonacci(int n)
 
     return fib[n];
 }
+
 ```
 
 Internet:
