@@ -133,7 +133,7 @@ a /= 5; // Die Variable a wird mit 5 dividiert und wird gespeichert
 
 # Beispielskripte
 
-Schaltjahrprogramm
+## Schaltjahrprogramm
 
 ```cs
 
@@ -182,5 +182,86 @@ class Program
     {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
+}
+```
+
+## Fibonacci rekursive Funktion
+
+GPT-4:
+
+1. Rekursive Methode: Die rekursive Methode ist die direkteste Methode zur Berechnung der Fibonacci-Zahlen, aber sie ist nicht effizient für große Zahlen.
+
+```cs
+public static int Fibonacci(int n)
+{
+    if (n <= 1)
+        return n;
+    else
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+```
+
+2. Iterative Methode: Die iterative Methode ist effizienter als die rekursive Methode, da sie weniger Speicherplatz benötigt und schneller ist.
+
+```cs
+public static int Fibonacci(int n)
+{
+    int a = 0;
+    int b = 1;
+
+    for (int i = 0; i < n; i++)
+    {
+        int temp = a;
+        a = b;
+        b = temp + b;
+    }
+
+    return a;
+}
+```
+
+3. Methode mit Memoisierung: Memoisierung ist eine Technik, bei der Sie die Ergebnisse teurer Funktionsaufrufe speichern und bei wiederholten Aufrufen wiederverwenden. Dies kann die Leistung erheblich verbessern.
+
+```cs
+public static int Fibonacci(int n)
+{
+    int[] fib = new int[n + 2];
+    fib[0] = 0;
+    fib[1] = 1;
+
+    for (int i = 2; i <= n; i++)
+    {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    return fib[n];
+}
+```
+
+Internet:
+```cs
+using System;
+public class funcexer12
+{
+ public static int Fib(int n1)
+ {
+  //if ( (n1 == 1) || (number == 2) )
+    if (n1 <=2)
+      return 1;
+      else
+      return Fib( n1 - 1 ) + Fib( n1 - 2 );
+ }
+   
+ public static void Main()
+ {
+      int num;
+  
+	  Console.Write("\n\nRecursive Function : To calculate the Fibonacci number of a specific term :\n");
+      Console.Write("-------------------------------------------------------------------------------\n");   
+      Console.Write("Enter a number: ");
+      num = Convert.ToInt32( Console.ReadLine() );
+   
+      Console.WriteLine("\nThe Fibonacci of {0} th term  is {1} \n", num, Fib(num));
+ }
 }
 ```
